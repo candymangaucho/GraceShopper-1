@@ -68,13 +68,13 @@ async function createInitialUsers() {
       console.log('Starting to create products...');
   
       const productsToCreate = [
-        { product: 'Bananas', description: 'Best Bananas money can buy', price: '$50' },
-        { product: 'Apples', description: 'Best Apples money can buy', price: '$50' },
-        { product: 'Kiwis', description: 'Best Kiwis money can buy', price: '$50' },
-        { product: 'Grapes', description: 'Best Grapes money can buy', price: '$50' },
-        { product: 'Strawberries', description: 'Best Strawberries money can buy', price: '$50' },
-        { product: 'Pomegranates', description: 'Best Pomegranates money can buy', price: '$50' },
-        { product: 'Oranges', description: 'Best Oranges money can buy', price: '$50' },
+        { name: 'Bananas', description: 'Best Bananas money can buy', price: '$50' },
+        { name: 'Apples', description: 'Best Apples money can buy', price: '$50' },
+        { name: 'Kiwis', description: 'Best Kiwis money can buy', price: '$50' },
+        { name: 'Grapes', description: 'Best Grapes money can buy', price: '$50' },
+        { name: 'Strawberries', description: 'Best Strawberries money can buy', price: '$50' },
+        { name: 'Pomegranates', description: 'Best Pomegranates money can buy', price: '$50' },
+        { name: 'Oranges', description: 'Best Oranges money can buy', price: '$50' },
       ]
       const products = await Promise.all(productsToCreate.map(createProduct));
   
@@ -116,6 +116,7 @@ async function createInitialUsers() {
       await createTables();
       await createInitialUsers();
       await createInitialProducts();
+      await createInitialOrders();
     } catch (error) {
       console.log('Error during rebuildDB')
       throw error;
